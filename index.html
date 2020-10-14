@@ -50,186 +50,286 @@
 
 									</v-col>
 
-										<v-btn class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
-											<v-icon>mdi-chevron-double-down</v-icon>
-										</v-btn>
-									</v-row>
-								</v-container>
-							</v-theme-provider>
-						</v-img>
-					</v-row>
-				</section>
+									<v-btn
+										class="align-self-end"
+										fab
+										outlined
+										@click="$vuetify.goTo('#about-me')"
+									>
+										<v-icon>mdi-chevron-double-down</v-icon>
+									</v-btn>
+								</v-row>
+							</v-container>
+						</v-theme-provider>
+					</v-img>
+				</v-row>
+			</section>
 
-				<section id="about-me">
-					<div class="py-12"></div>
+			<section id="about-me">
+				<div class="py-12"></div>
 
-					<v-container class="text-center">
-						<h2 class="display-2 font-weight-bold mb-3">A MON PROPOS</h2>
+				<v-container class="text-center">
+					<h2 class="display-2 font-weight-bold mb-3">A MON PROPOS</h2>
 
-						<v-responsive class="mx-auto mb-8" width="56">
-							<v-divider class="mb-1"></v-divider>
+					<v-responsive
+						class="mx-auto mb-8"
+						width="56"
+					>
+						<v-divider class="mb-1"></v-divider>
 
-							<v-divider></v-divider>
-						</v-responsive>
+						<v-divider></v-divider>
+					</v-responsive>
 
-						<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
-							Je suis passionné d'informatique et de programmation depuis tout petit, j'ai de bonnes connaissances dans les langages back-end et quelques notions dans les langages front-end, ce qui fait de moi un développeur polyvalent (fullstack).<br /> Je travaille en tant que développeur freelance en appui avec Infographart, ce qui me permets d'être à la fois prestataire de service mais aussi freelance.
-						</v-responsive>
+					<v-responsive
+						class="mx-auto title font-weight-light mb-8"
+						max-width="720"
+					>
+						Je suis passionné d'informatique et de programmation depuis tout petit, j'ai de bonnes connaissances dans les langages back-end et quelques notions dans les langages front-end, ce qui fait de moi un développeur polyvalent (fullstack).<br/>
+						Je travaille en tant que développeur freelance en appui avec Infographart, ce qui me permets d'être à la fois prestataire de service mais aussi freelance.
+					</v-responsive>
 
-						<v-avatar class="elevation-12 mb-12" size="128">
-							<v-img src="https://cloudinary-a.akamaihd.net/hopwork/image/upload/h_360,w_360,c_thumb,g_face,z_0.4,q_90,dpr_2.0/sgxzuyubjzxd1omiqdkp.webp"></v-img>
-						</v-avatar>
+					<v-avatar
+						class="elevation-12 mb-12"
+						size="128"
+					>
+						<v-img src="https://cloudinary-a.akamaihd.net/hopwork/image/upload/h_360,w_360,c_thumb,g_face,z_0.4,q_90,dpr_2.0/sgxzuyubjzxd1omiqdkp.webp"></v-img>
+					</v-avatar>
 
-						<div></div>
+					<div></div>
 
-						<v-btn color="grey" href="https://github.com/stan1712/" outlined large target="_blank">
-							<span class="grey--text text--darken-1 font-weight-bold">
-								Mon Github
-							</span>
-						</v-btn>
+					<v-btn
+						color="grey"
+						href="https://github.com/stan1712/"
+						outlined
+						large
+					>
+						<span class="grey--text text--darken-1 font-weight-bold">
+							Mon Github
+						</span>
+					</v-btn>
+				</v-container>
 
-						<v-btn color="grey" href="https://www.malt.fr/profile/stanislascastaybert" outlined large target="_blank">
-							<span class="grey--text text--darken-1 font-weight-bold">
-								Mon Profil Malt
-							</span>
-						</v-btn>
+				<div class="py-12"></div>
+			</section>
 
-						<br /><br />
+			<!--<section
+				id="features"
+				class="grey lighten-3"
+			>
+				<div class="py-12"></div>
 
-						<v-btn icon color="primary" href="https://www.facebook.com/stan1712/" small target="_blank">
-							<v-icon>mdi-facebook</v-icon>
-						</v-btn>
+				<v-container class="text-center">
+					<h2 class="display-2 font-weight-bold mb-3">VUETIFY FEATURES</h2>
 
-						<v-btn icon color="primary" href="https://twitter.com/stanobdx" small target="_blank">
-							<v-icon>mdi-twitter</v-icon>
-						</v-btn>
+					<v-responsive
+						class="mx-auto mb-12"
+						width="56"
+					>
+						<v-divider class="mb-1"></v-divider>
 
-						<v-btn icon color="primary" href="https://instagram.com/stan_bdx" small>
-							<v-icon>mdi-instagram</v-icon>
-						</v-btn>
+						<v-divider></v-divider>
+					</v-responsive>
 
-						<v-btn icon color="primary" href="snapchat://add/stano1712" small target="_blank">
-							<v-icon>mdi-snapchat</v-icon>
-						</v-btn>
-					</v-container>
-
-					<div class="py-12"></div>
-				</section>
-
-				<section id="stats">
-					<v-parallax :height="$vuetify.breakpoint.smAndDown ? 700 : 500" src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
-						<v-container fill-height>
-							<v-row class="mx-auto">
-								<v-col v-for="[value, title] of stats" :key="title" cols="12" md="3">
-									<div class="text-center">
-										<div class="display-3 font-weight-black mb-4" v-text="value"></div>
-
-										<div class="title font-weight-regular text-uppercase" v-text="title"></div>
+					<v-row>
+						<v-col
+							v-for="({ icon, title, text }, i) in features"
+							:key="i"
+							cols="12"
+							md="4"
+						>
+							<v-card
+								class="py-12 px-4"
+								color="grey lighten-5"
+								flat
+							>
+								<v-theme-provider dark>
+									<div>
+										<v-avatar
+											color="primary"
+											size="88"
+										>
+											<v-icon
+												large
+												v-text="icon"
+											></v-icon>
+										</v-avatar>
 									</div>
-								</v-col>
-							</v-row>
-						</v-container>
-					</v-parallax>
-				</section>
+								</v-theme-provider>
 
-				<section id="blog">
-					<div class="py-12"></div>
+								<v-card-title
+									class="justify-center font-weight-black text-uppercase"
+									v-text="title"
+								></v-card-title>
 
-					<v-container>
-						<h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Portoflio</h2>
+								<v-card-text
+									class="subtitle-1"
+									v-text="text"
+								>
+								</v-card-text>
+							</v-card>
+						</v-col>
+					</v-row>
+				</v-container>
 
-						<v-responsive class="mx-auto mb-12" width="56">
-							<v-divider class="mb-1"></v-divider>
+				<div class="py-12"></div>
+			</section>-->
 
-							<v-divider></v-divider>
-						</v-responsive>
+			<section id="stats">
+				<v-parallax
+					:height="$vuetify.breakpoint.smAndDown ? 700 : 500"
+					src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+				>
+					<v-container fill-height>
+						<v-row class="mx-auto">
+							<v-col
+								v-for="[value, title] of stats"
+								:key="title"
+								cols="12"
+								md="3"
+							>
+								<div class="text-center">
+									<div
+										class="display-3 font-weight-black mb-4"
+										v-text="value"
+									></div>
 
-						<v-row>
-							<v-col v-for="({ src, text, title, link }, i) in articles" :key="i" cols="12" md="4">
-								<v-img :src="src" class="mb-4" height="275" max-width="100%"></v-img>
-
-								<h3 class="font-weight-black mb-4 text-uppercase" v-text="title"></h3>
-
-								<div class="title font-weight-light mb-5" v-text="text"></div>
-
-								<v-btn class="ml-n4 font-weight-black" text :href="link" target="_blank">
-									Visiter
-								</v-btn>
+									<div
+										class="title font-weight-regular text-uppercase"
+										v-text="title"
+									></div>
+								</div>
 							</v-col>
 						</v-row>
 					</v-container>
+				</v-parallax>
+			</section>
 
-					<div class="py-12"></div>
-				</section>
+			<section id="blog">
+				<div class="py-12"></div>
 
-			</v-content>
+				<v-container>
+					<h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Portoflio</h2>
 
-			<v-footer class="justify-center" color="#292929" height="100">
-				<div class="title font-weight-light grey--text text--lighten-1 text-center">
-					&copy; {{ (new Date()).getFullYear() }} — Made with 💙 by Stanislas C. with Vuetify<br />
-				</div>
-			</v-footer>
-		</v-app>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-	<script>
-		new Vue({
-			el: '#app',
-			vuetify: new Vuetify(),
-			data() {
-				return {
-					articles: [{
-							src: 'https://cloudinary-a.akamaihd.net/hopwork/image/upload/w_1024,c_limit,dpr_2/mzyy5dft6qyfgw9iiszu.jpg',
-							title: 'HostCrush!',
-							text: 'Plateforme d\'hébergement.',
-							link: 'https://hostcrush.cloud/'
-						},
-						/*{
-							src: 'https://www.wallpaperup.com/uploads/wallpapers/2014/09/26/457784/7640dd0639bcdae664fe6febc79e664b.jpg',
-							title: 'HbrG',
-							text: 'Plateforme d\'hébergement de fichiers de petites taille (photos, txt, etc).',
-							link: 'https://hbrg.stan1712.com/'
-						},*/
-						{
-							src: 'https://infographart.com/ressources/logos/KATANA/K/K-tana.svg',
-							title: 'Katana',
-							text: 'CRM adaptatif pour les petites, moyennes, ou grandes entreprises.',
-							link: '#'
-						},
-						{
-							src: 'https://media.discordapp.net/attachments/758361357095141396/758361382033817661/unknown.png?width=1280&height=720',
-							title: 'Asiatex - E-Shop',
-							text: 'E-shop réalisé avec Wordpress & WooCommerce.',
-							link: 'https://e-shop.asiatex.fr/'
-						}
-					],
-					features: [{
-							icon: 'mdi-account-group-outline',
-							title: 'Vibrant Community',
-							text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
-						},
-						{
-							icon: 'mdi-update',
-							title: 'Frequent Updates',
-							text: 'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.',
-						},
-						{
-							icon: 'mdi-shield-outline',
-							title: 'Long-term Support',
-							text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
-						},
-					],
-					stats: [
-						['19', 'Projets'],
-						['33', 'Technologies maitrisées'],
-						['7', 'Certifications'],
-						['843', 'Téléchargements'],
-					],
-				}
+					<v-responsive
+						class="mx-auto mb-12"
+						width="56"
+					>
+						<v-divider class="mb-1"></v-divider>
+
+						<v-divider></v-divider>
+					</v-responsive>
+
+					<v-row>
+						<v-col
+							v-for="({ src, text, title, link }, i) in articles"
+							:key="i"
+							cols="12"
+							md="4"
+						>
+							<v-img
+								:src="src"
+								class="mb-4"
+								height="275"
+								max-width="100%"
+							></v-img>
+
+							<h3
+								class="font-weight-black mb-4 text-uppercase"
+								v-text="title"
+							></h3>
+
+							<div
+								class="title font-weight-light mb-5"
+								v-text="text"
+							></div>
+
+							<v-btn
+								class="ml-n4 font-weight-black"
+								text
+								:href="link"
+								target="_blank"
+							>
+								Visiter
+							</v-btn>
+						</v-col>
+					</v-row>
+				</v-container>
+
+				<div class="py-12"></div>
+			</section>
+			
+		</v-content>
+
+		<v-footer
+			class="justify-center"
+			color="#292929"
+			height="100"
+		>
+			<div class="title font-weight-light grey--text text--lighten-1 text-center">
+				&copy; {{ (new Date()).getFullYear() }} — Made with 💙 by Stanislas C. with Vuetify<br/>
+			</div>
+		</v-footer>
+	</v-app>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+ <script>
+	new Vue({
+		el: '#app',
+		vuetify: new Vuetify(),
+		data () {
+			return {
+				articles: [
+					{
+						src: 'https://cloudinary-a.akamaihd.net/hopwork/image/upload/w_1024,c_limit,dpr_2/mzyy5dft6qyfgw9iiszu.jpg',
+						title: 'HostCrush!',
+						text: 'Plateforme d\'hébergement.',
+						link: 'https://hostcrush.cloud/'
+					},
+					{
+						src: 'https://www.wallpaperup.com/uploads/wallpapers/2014/09/26/457784/7640dd0639bcdae664fe6febc79e664b.jpg',
+						title: 'HbrG',
+						text: 'Plateforme d\'hébergement de fichiers de petites taille (photos, txt, etc).',
+						link: 'https://hbrg.stan1712.com/'
+					},
+					{
+						src: 'https://infographart.com/ressources/logos/KATANA/K/K-tana.svg',
+						title: 'Katana',
+						text: 'CRM adaptatif pour les petites, moyennes, ou grandes entreprises.',
+						link: '#'
+					},
+					{
+						src: 'https://media.discordapp.net/attachments/758361357095141396/758361382033817661/unknown.png?width=1280&height=720',
+						title: 'Asiatex - E-Shop',
+						text: 'E-shop réalisé avec Wordpress & WooCommerce.',
+						link: 'https://e-shop.asiatex.fr/'
+				],
+				features: [
+					{
+						icon: 'mdi-account-group-outline',
+						title: 'Vibrant Community',
+						text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+					},
+					{
+						icon: 'mdi-update',
+						title: 'Frequent Updates',
+						text: 'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.',
+					},
+					{
+						icon: 'mdi-shield-outline',
+						title: 'Long-term Support',
+						text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+					},
+				],
+				stats: [
+					['19', 'Projets'],
+					['33', 'Technologies maitrisées'],
+					['7', 'Certifications'],
+					['843', 'Téléchargements'],
+				],
 			}
-		})
-	</script>
+		}
+	})
+</script>
 </body>
-
 </html>
