@@ -168,7 +168,7 @@
 						</v-responsive>
 
 						<v-row>
-							<v-col v-for="({ src, text, title, link }, i) in articles" :key="i" cols="12" md="4">
+							<v-col v-for="({ src, text, title, link }, i) in items" :key="i" cols="12" md="4">
 								<v-img :src="src" class="mb-4" height="275" max-width="100%" contain></v-img>
 
 								<h3 class="font-weight-black mb-4 text-uppercase" v-text="title"></h3>
@@ -203,7 +203,7 @@
 			data() {
 				return {
 
-					articles: [{
+					items: [{
 							src: 'https://cloudinary-a.akamaihd.net/hopwork/image/upload/w_1024,c_limit,dpr_2/mzyy5dft6qyfgw9iiszu.jpg',
 							title: 'HostCrush!',
 							text: 'Plateforme d\'hébergement.',
