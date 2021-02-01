@@ -119,6 +119,9 @@
 									<v-col cols="auto">
 										<h3 class="font-weight-black text-uppercase">{{ item.title }}</h3>
 									</v-col>
+									<v-col>
+										<v-chip color="primary" outlined class="ml-1 float-right" v-for="techno in item.technos" :key="techno" small>{{ techno }}</v-chip>
+									</v-col>
 								</v-row>
 
 								<div class="title font-weight-light mb-5 mt-4">{{ item.text }}</div>
@@ -155,43 +158,57 @@
 							src: 'https://www.wallpaperup.com/uploads/wallpapers/2014/09/26/457784/7640dd0639bcdae664fe6febc79e664b.jpg',
 							title: 'HbrG',
 							text: 'Plateforme d\'hébergement de fichiers de petites taille (photos, txt, etc).',
-							link: 'https://hbrg.stan1712.com/'
+							link: 'https://hbrg.stan1712.com/',
+							technos: ['Vue.JS', 'Firebase']
 						},
 						{
 							src: 'https://infographart.com/ressources/logos/KATANA/K/K-tana.svg',
 							title: 'Katana',
 							text: 'CRM adaptatif pour les petites, moyennes, ou grandes entreprises.',
-							link: '#'
+							link: '#',
+							technos: ['Vue.JS', 'Firebase']
 						},
 						{
 							src: 'https://media.discordapp.net/attachments/758361357095141396/758361382033817661/unknown.png?width=1280&height=720',
 							title: 'Asiatex - E-Shop',
 							text: 'E-shop réalisé avec Wordpress & WooCommerce.',
-							link: 'https://e-shop.asiatex.fr/'
+							link: 'https://e-shop.asiatex.fr/',
+							technos: ['Wordpress', 'WooCommerce']
 						},
 						{
 							src: 'https://stan1712.com/share/vizion.wetstonrp.prot.png',
 							title: 'ViZion',
 							text: 'Solution de gestion de personnage Roleplay pour le serveur Minecraft WetstonRP.',
-							link: 'https://vizion.stan1712.com/'
+							link: 'https://vizion.stan1712.com/',
+							technos: ['PHP', 'MySQL']
+						},
+						{
+							src: 'https://stan1712.com/share/LOGO-HOZIRON.png',
+							title: 'HoriZon',
+							text: 'Version 2 de ViZion en Vue.JS.',
+							link: 'https://horizon.stan1712.com/',
+							technos: ['Vue.JS', 'Firebase']
+						},
+						{
+							src: 'https://cloudinary-a.akamaihd.net/hopwork/image/upload/w_1024,c_limit,dpr_2/mzyy5dft6qyfgw9iiszu.jpg',
+							title: 'HostCrush!',
+							text: 'Plateforme d\'hébergement.',
+							link: 'https://hostcrush.cloud/',
+							technos: ['PHP']
 						},
 						{
 							src: 'https://stan1712.com/share/slash.stan1712.com.prot.png',
 							title: 'Stan Is Slash',
 							text: 'Blog fait en PHP des plus belles punchlines.',
-							link: 'https://slash.stan1712.com/'
-						},
-						{
-							src: 'https://stan1712.com/share/LOGO-HOZIRON.png',
-							title: 'HoriZon',
-							text: 'Version 2, en Vue.JS de ViZion.',
-							link: 'https://horizon.stan1712.com/'
+							link: 'https://slash.stan1712.com/',
+							technos: ['PHP', 'MySQL']
 						},
 						{
 							src: 'https://avatars.githubusercontent.com/u/75129344',
 							title: 'RollEat',
 							text: 'Application de livraison de repas aléatoires à domicile.',
-							link: '#'
+							link: '#',
+							technos: ['Vue.JS', 'Firebase']
 						},
 					],
 					stats: [
