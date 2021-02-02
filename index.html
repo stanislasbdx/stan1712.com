@@ -9,8 +9,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="https://media.discordapp.net/attachments/610108081157963787/758399366356140042/Logo_new.jpg">
 
-	<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap' rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+	<link rel="preload" href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap' as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 	<meta name="Author" content="Stanislas Castaybert x Vuetify">
 	<meta name="Description" content="⚡ Développeur back-end • Vue.JS / PHP & MySQL">
@@ -19,10 +20,16 @@
 <body>
 	<div id="app">
 		<v-app>
-			<v-content>
+			<v-main>
 				<section id="hero">
 					<v-row no-gutters>
-						<v-img :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'" :src="landImg">
+						<v-img :lazy-src="landImg[0]" :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'" :src="landImg[1]">
+							<template v-slot:placeholder>
+								<v-row class="fill-height ma-0" align="center" justify="center">
+									<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+								</v-row>
+							</template>
+
 							<v-theme-provider dark>
 								<v-container fill-height>
 									<v-row align="center" class="white--text mx-auto" justify="center">
@@ -138,8 +145,7 @@
 
 					<div class="py-12"></div>
 				</section>
-
-			</v-content>
+			</v-main>
 
 			<v-footer class="justify-center" color="#292929" height="100">
 				<div class="title font-weight-light grey--text text--lighten-1 text-center">
@@ -149,18 +155,16 @@
 		</v-app>
 	</div>
 
-	<script src="https://kit.fontawesome.com/0d5b1812ef.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.4.3/vuetify.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 	<script>
 		new Vue({
 			el: '#app',
 			vuetify: new Vuetify(),
 			data() {
 				return {
-					items: [
-						{
+					items: [{
 							src: 'https://www.wallpaperup.com/uploads/wallpapers/2014/09/26/457784/7640dd0639bcdae664fe6febc79e664b.jpg',
 							title: 'HbrG',
 							text: 'Plateforme d\'hébergement de fichiers de petites taille (photos, txt, etc).',
@@ -241,12 +245,12 @@
 					})
 				});
 
-				this.stats[0][0] = this.items.length + 7;
+				this.landImg = [
+					"https://stan1712.com/share/IMG_20200928_131237-min-min.jpeg",
+					"https://stan1712.com/share/IMG_20200928_131237-min.jpeg"
+				];
 
-				axios.get('https://api.resmush.it/ws.php?img=https://stan1712.com/share/IMG_20200928_131237.jpg').then(response => {
-					this.landImg = response.data.dest.replace("http", "https");
-					console.log(this.landImg)
-				});
+				this.stats[0][0] = this.items.length + 7;
 			}
 		})
 	</script>
