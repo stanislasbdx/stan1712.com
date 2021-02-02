@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
 	<title>Stanislas Castaybert</title>
-	<meta charset="utf-8">
+
+	<meta charset="UTF-8">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="https://media.discordapp.net/attachments/610108081157963787/758399366356140042/Logo_new.jpg">
 
-	<script src="https://kit.fontawesome.com/0d5b1812ef.js" crossorigin="anonymous"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap' rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+
+	<meta name="Author" content="Stanislas Castaybert x Vuetify">
+	<meta name="Description" content="⚡ Développeur back-end • Vue.JS / PHP & MySQL">
 </head>
 
 <body>
@@ -37,7 +40,7 @@
 										</v-col>
 
 										<v-btn class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
-											<v-icon>mdi-chevron-double-down</v-icon>
+											<i class="fa fa-chevron-down" aria-hidden="true"></i>
 										</v-btn>
 									</v-row>
 								</v-container>
@@ -69,13 +72,13 @@
 
 						<div></div>
 
-						<v-btn color="blue-grey darken-4" href="https://github.com/stan1712/" target="_blank" outlined large icon>
+						<v-btn color="blue-grey darken-4" href="https://github.com/stan1712/" rel="noopener" target="_blank" outlined large icon>
 							<i class="fab fa-github" aria-hidden="true"></i>
 						</v-btn>
-						<v-btn color="light-blue lighten-2" href="https://twitter.com/stanobdx/" target="_blank" outlined large icon>
+						<v-btn color="light-blue lighten-2" href="https://twitter.com/stanobdx/" rel="noopener" target="_blank" outlined large icon>
 							<i class="fab fa-twitter" aria-hidden="true"></i>
 						</v-btn>
-						<v-btn color="red lighten-3" href="https://www.instagram.com/stan_bdx/" target="_blank" outlined large icon>
+						<v-btn color="red lighten-3" href="https://www.instagram.com/stan_bdx/" rel="noopener" target="_blank" outlined large icon>
 							<i class="fab fa-instagram" aria-hidden="true"></i>
 						</v-btn>
 					</v-container>
@@ -126,7 +129,7 @@
 
 								<div class="title font-weight-light mb-5 mt-4">{{ item.text }}</div>
 
-								<v-btn class="ml-n4 font-weight-black" text :href="item.link" target="_blank">
+								<v-btn class="ml-n4 font-weight-black" text :href="item.link" rel="noopener" target="_blank">
 									Visiter
 								</v-btn>
 							</v-col>
@@ -145,7 +148,9 @@
 			</v-footer>
 		</v-app>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+
+	<script src="https://kit.fontawesome.com/0d5b1812ef.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script>
@@ -238,8 +243,9 @@
 
 				this.stats[0][0] = this.items.length + 7;
 
-				axios.get('http://api.resmush.it/ws.php?img=https://stan1712.com/share/IMG_20200928_131237.jpg').then(response => {
-					this.landImg = response.data.dest;
+				axios.get('https://api.resmush.it/ws.php?img=https://stan1712.com/share/IMG_20200928_131237.jpg').then(response => {
+					this.landImg = response.data.dest.replace("http", "https");
+					console.log(this.landImg)
 				});
 			}
 		})
