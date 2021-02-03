@@ -90,6 +90,43 @@
 						</v-btn>
 					</v-container>
 
+					<div class="py-4"></div>
+				</section>
+
+				<section id="timeline">
+					<v-container class="text-center">
+						<h2 class="display-2 font-weight-bold mb-3">MES EXPERIENCES</h2>
+
+						<v-responsive class="mx-auto mb-8" width="56">
+							<v-divider class="mb-1"></v-divider>
+
+							<v-divider></v-divider>
+						</v-responsive>
+
+						<v-responsive class="mx-auto title font-weight-light mb-8" max-width="1280">
+							<v-timeline >
+								<v-timeline-item v-for="experience in experiences" :key="experience.name" large>
+									<template v-slot:icon v-if="experience.logo">
+										<v-avatar>
+											<img :src="experience.logo" contain>
+										</v-avatar>
+									</template>
+									<template v-slot:opposite>
+										<span>{{ experience.time }}</span>
+									</template>
+									<v-card class="mx-3">
+										<v-card-title class="headline" style="display: block">
+											{{ experience.name }}
+										</v-card-title>
+										<v-card-text v-html="experience.details" class="mb-2"></v-card-text>
+
+										<v-chip color="primary" outlined class="ml-1 float-right" v-for="techno in experience.technos" :key="techno" small>{{ techno }}</v-chip>
+									</v-card>
+								</v-timeline-item>
+							</v-timeline>
+						</v-responsive>
+					</v-container>
+
 					<div class="py-12"></div>
 				</section>
 
@@ -168,6 +205,27 @@
 			vuetify: new Vuetify(),
 			data() {
 				return {
+					experiences: [{
+						name: 'Infographart',
+						logo: 'https://infographart.com/ressources/logos/IFGA/LogoIFGA_1.jpg',
+						details: `- Création et Maintenances d'ERP & CRM <br/>- Création de sites web, forums et blogs <br/>- Création d'une plateforme CMS et administration <br/>- Création de plateformes e-commerces`,
+						technos: ['Vue.JS', 'PHP', 'MySQL', 'Firebase'],
+						time: "2018 - Aujourd'hui"
+					},
+					{
+						name: 'Météa',
+						logo: '',
+						details: `Installation et mise à niveau d'un système de gestion de fichiers et intranet en PHP avec une interface administrateur et utilisateur.`,
+						technos: ['PHP', 'MySQL'],
+						time: "Été 2020"
+					},
+					{
+						name: 'DEAL Informatique',
+						logo: '',
+						details: `Stage d'observation de troisième dans une entreprise de développement d'ERP.`,
+						technos: [],
+						time: "Décembre 2015"
+					}],
 					items: [{
 							src: 'https://www.wallpaperup.com/uploads/wallpapers/2014/09/26/457784/7640dd0639bcdae664fe6febc79e664b.jpg',
 							title: 'HbrG',
