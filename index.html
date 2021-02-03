@@ -139,6 +139,10 @@
 								<v-btn class="ml-n4 font-weight-black" text :href="item.link" rel="noopener" target="_blank">
 									Visiter
 								</v-btn>
+
+								<v-btn class="ml-n4 font-weight-black" v-if="item.github" text :href="item.github" rel="noopener" target="_blank">
+									Repo Github
+								</v-btn>
 							</v-col>
 						</v-row>
 					</v-container>
@@ -211,6 +215,7 @@
 							title: 'Stan Is Slash',
 							text: 'Blog fait en PHP des plus belles punchlines.',
 							link: 'https://slash.stan1712.com/',
+							github: 'https://github.com/stan1712/StanIsSlash',
 							technos: ['PHP', 'MySQL']
 						},
 						{
@@ -218,6 +223,7 @@
 							title: 'RollEat',
 							text: 'Application de livraison de repas aléatoires à domicile.',
 							link: '#',
+							github: 'https://github.com/RollEat/RollEat',
 							technos: ['Vue.JS', 'Firebase']
 						},
 					],
@@ -237,6 +243,7 @@
 							src: `https://www.spigotmc.org/` + resource.icon.url,
 							title: resource.name,
 							text: resource.tag,
+							github: resource.sourceCodeLink,
 							link: `https://www.spigotmc.org/resources/${resource.name}.${resource.id}/`,
 							technos: ['Spigot MC']
 						});
