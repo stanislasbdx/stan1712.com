@@ -332,7 +332,10 @@
 						[7, 'Certifications'],
 						[0, 'Téléchargements'],
 					],
-					landImg: ''
+					landImg: [
+						"https://firebasestorage.googleapis.com/v0/b/katana-main/o/companies%2F36C84mB7deUm2RGEMLTP%2Fportfolio%2FIMG_20200928_131237_800x800.webp?alt=media&token=98158c57-bd5c-4500-947c-1b0179909b85",
+						"https://stan1712.com/share/IMG_20200928_131237.webp"
+					]
 				}
 			},
 			mounted() {
@@ -350,11 +353,6 @@
 						this.stats[3][0] += Number(resource.downloads);
 					});
 				});
-
-				this.landImg = [
-					"https://stan1712.com/share/IMG_20200928_131237-min-min.jpeg",
-					"https://stan1712.com/share/IMG_20200928_131237-min.jpeg"
-				];
 
 				this.stats[0][0] = this.items.length + 7;
 			}
