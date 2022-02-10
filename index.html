@@ -235,7 +235,6 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.4.3/vuetify.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 	<script>
 		new Vue({
 			el: '#app',
@@ -337,8 +336,8 @@
 				}
 			},
 			mounted() {
-				axios.get('https://api.spiget.org/v2/authors/114782/resources').then(response => {
-					response.data.forEach((resource) => {
+				fetch("https://api.spiget.org/v2/authors/114782/resources").then(response => response.json()).then(response => {
+					response.forEach((resource) => {
 						this.items.push({
 							src: `https://www.spigotmc.org/` + resource.icon.url,
 							title: resource.name,
@@ -349,7 +348,7 @@
 						});
 
 						this.stats[3][0] += Number(resource.downloads);
-					})
+					});
 				});
 
 				this.landImg = [
