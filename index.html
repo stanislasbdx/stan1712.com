@@ -171,7 +171,8 @@
 							<v-divider></v-divider>
 						</v-responsive>
 
-						<v-row>
+						<v-container>
+							<v-row>
 							<v-col v-for="(item, i) in items" :key="i" cols="12" md="4">
 								<v-img :alt="'Logo de ' + item.title" :src="item.src" class="mb-4" height="275" max-width="100%" contain></v-img>
 
@@ -185,16 +186,39 @@
 								</v-row>
 
 								<div class="title font-weight-light mb-5 mt-4">{{ item.text }}</div>
+								
+								<v-row>
+									<v-col cols="auto">
+										<v-btn
+											aria-label="Visiter le site du projet"
+											class="ml-n4 font-weight-black"
+											:disabled="!item.link"
+											text
+											:href="item.link"
+											rel="noopener"
+											target="_blank"
+										>
+											Visiter
+										</v-btn>
+									</v-col>
 
-								<v-btn aria-label="Visiter le site du projet" class="ml-n4 font-weight-black" :disabled="!item.link" text :href="item.link" rel="noopener" target="_blank">
-									Visiter
-								</v-btn>
-
-								<v-btn aria-label="Visiter le repository Github du projet" class="ml-n4 font-weight-black" v-if="item.github" text :href="item.github" rel="noopener" target="_blank">
-									Repo Github
-								</v-btn>
+									<v-col cols="auto">
+										<v-btn
+											aria-label="Visiter le repository Github du projet"
+											class="ml-n4 font-weight-black"
+											v-if="item.github"
+											text
+											:href="item.github"
+											rel="noopener"
+											target="_blank"
+										>
+											Repo Github
+										</v-btn>
+									</v-col>
+								</v-row>
 							</v-col>
 						</v-row>
+						</v-container>
 					</v-container>
 
 					<div class="py-12"></div>
