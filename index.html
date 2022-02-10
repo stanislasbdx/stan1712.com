@@ -111,7 +111,9 @@
 						</v-responsive>
 
 						<v-responsive class="mx-auto title font-weight-light mb-8" max-width="1280">
-							<v-timeline >
+							<v-timeline
+								:dense="$vuetify.breakpoint.smAndDown"
+							>
 								<v-timeline-item v-for="experience in experiences" :key="experience.name" large>
 									<template v-slot:icon v-if="experience.logo">
 										<v-avatar>
