@@ -140,7 +140,11 @@
 				</section>
 
 				<section id="stats">
-					<v-parallax :height="$vuetify.breakpoint.smAndDown ? 700 : 500" src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+					<v-parallax
+						:height="$vuetify.breakpoint.smAndDown ? 700 : 500"
+						lazy-src="https://firebasestorage.googleapis.com/v0/b/katana-main/o/companies%2F36C84mB7deUm2RGEMLTP%2Fportfolio%2FIMG_20210819_085618_2_800x800.webp?alt=media&token=aecb25d0-f192-486b-8d36-9a0c2eded213"
+						src="https://stan1712.com/share/IMG_20210819_085618_2.webp"
+					>
 						<v-container fill-height>
 							<v-row class="mx-auto">
 								<v-col v-for="[value, title] of stats" :key="title" cols="12" md="3">
