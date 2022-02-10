@@ -133,7 +133,7 @@
 								<v-timeline-item v-for="experience in experiences" :key="experience.name" large>
 									<template v-slot:icon v-if="experience.logo">
 										<v-avatar>
-											<img :alt="'Logo de ' + experience.name" :src="experience.logo" contain>
+											<img :alt="'Logo de ' + experience.name" :src="experience.logo" contain width="50px">
 										</v-avatar>
 									</template>
 									<template v-slot:opposite>
@@ -259,7 +259,7 @@
 				return {
 					experiences: [{
 						name: 'Infographart',
-						logo: 'https://infographart.com/ressources/logos/IFGA/LogoIFGA_1.jpg',
+						logo: 'https://firebasestorage.googleapis.com/v0/b/katana-main/o/companies%2F36C84mB7deUm2RGEMLTP%2Fportfolio%2FLogoIFGA_1_50x50.webp?alt=media&token=6d65799b-f93a-43fd-a2d0-0dea01db81e1',
 						details: `- Création et Maintenances d'ERP & CRM <br/>- Création de sites web, forums et blogs <br/>- Création d'une plateforme CMS et administration <br/>- Création de plateformes e-commerces`,
 						technos: ['Vue.JS', 'PHP', 'MySQL', 'Firebase'],
 						time: "2018 - Aujourd'hui"
