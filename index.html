@@ -139,9 +139,11 @@
 									<template v-slot:opposite>
 										<span>{{ experience.time }}</span>
 									</template>
-									<v-card class="mx-3">
-										<v-card-title class="headline" style="display: block">
-											{{ experience.name }}
+									<v-card class="mx-2">
+										<v-card-title style="display: block">
+											<span class="headline">{{ experience.name }}</span>
+											<br/>
+											<span class="subtitle-1">{{ experience.type }}</span>
 										</v-card-title>
 										<v-card-text v-html="experience.details" class="mb-2"></v-card-text>
 
@@ -259,21 +261,21 @@
 				return {
 					experiences: [{
 						name: 'Infographart',
-						logo: 'https://firebasestorage.googleapis.com/v0/b/katana-main/o/companies%2F36C84mB7deUm2RGEMLTP%2Fportfolio%2FLogoIFGA_1_50x50.webp?alt=media&token=6d65799b-f93a-43fd-a2d0-0dea01db81e1',
+						type: 'Freelance',
 						details: `- Création et Maintenances d'ERP & CRM <br/>- Création de sites web, forums et blogs <br/>- Création d'une plateforme CMS et administration <br/>- Création de plateformes e-commerces`,
 						technos: ['Vue.JS', 'PHP', 'MySQL', 'Firebase'],
 						time: "2018 - Aujourd'hui"
 					},
 					{
 						name: 'Météa',
-						logo: '',
+						type: 'Freelance',
 						details: `Installation et mise à niveau d'un système de gestion de fichiers et intranet en PHP avec une interface administrateur et utilisateur.`,
 						technos: ['PHP', 'MySQL'],
 						time: "Été 2020"
 					},
 					{
 						name: 'DEAL Informatique',
-						logo: '',
+						type: 'Stage',
 						details: `Stage d'observation de troisième dans une entreprise de développement d'ERP.`,
 						technos: [],
 						time: "Décembre 2015"
