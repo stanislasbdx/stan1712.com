@@ -138,6 +138,9 @@
 								>
 									<template v-slot:icon v-if="experience.logo">
 										<img
+											:alt="'Logo de ' + experience.name"
+											:src="experience.logo.url"
+											contain
 											:width="experience.logo.width ? experience.logo.width : '100%'"
 										>
 									</template>
