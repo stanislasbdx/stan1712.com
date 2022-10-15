@@ -233,9 +233,17 @@
 
 										<v-card-actions>
 											<v-row class="ma-1">
-										<v-col class="pl-0">
-											<v-chip color="primary" outlined class="ml-1 mb-1 float-right" v-for="techno in item.technos" :key="techno" small>{{ techno }}</v-chip>
-										</v-col>
+												<v-col cols="auto" class="pa-0">
+													<v-btn
+														aria-label="Connaître plus sur le projet"
+														class="font-weight-bold px-2"
+														v-if="item.about"
+														text
+														@click="item.expand = !item.expand"
+													>
+														En savoir plus
+													</v-btn>
+												</v-col>
 
 												<v-col cols="auto" class="pa-0">
 													<v-btn
@@ -267,7 +275,43 @@
 											</v-row>											
 										</v-card-actions>
 
-										</v-card-actions>
+										<v-expand-transition>
+											<v-card
+												v-if="item.expand && item.about"
+												class="transition-fast-in-fast-out v-card--reveal"
+												style="height: 100%;"
+											>
+												<v-card-text class="pb-0">
+													<v-row>
+														<v-col cols="col">
+															<p class="text-h4 text--primary">
+																{{ item.title }}
+															</p>
+														</v-col>
+														<v-col cols="auto">
+															<v-img
+																:alt="'Logo de ' + item.about.logo"
+																:src="item.about.logo"
+																width="70" 
+																contain
+															></v-img>
+														</v-col>
+													</v-row>
+													<p v-html="item.about.text"></p>
+												</v-card-text>
+
+												<v-card-actions>
+													<v-btn
+														text
+														:aria-label="`Fermer la description du projet ${item.title}`"
+														class="font-weight-bold"
+														@click="item.expand = false"
+													>
+														Fermer
+													</v-btn>
+												</v-card-actions>
+											</v-card>
+										</v-expand-transition>
 
 									</v-card>
 								</v-col>
@@ -286,6 +330,15 @@
 			</v-footer>
 		</v-app>
 	</div>
+	
+	<style>
+		.v-card--reveal {
+			bottom: 0;
+			opacity: 1 !important;
+			position: absolute;
+			width: 100%;
+		}
+	</style>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.4.3/vuetify.min.js"></script>
@@ -347,14 +400,14 @@
 							src: 'https://cdn.infographart.com/logos/KATANA/android-chrome-512x512.png',
 							title: 'Katana',
 							text: 'CRM adaptatif pour les petites, moyennes, ou grandes entreprises.',
-							technos: ['Vue.JS', 'Firebase']
+							expand: false
 						},
 						{
 							src: 'https://media.discordapp.net/attachments/758361357095141396/758361382033817661/unknown.png?width=1280&height=720',
 							title: 'Asiatex - E-Shop',
 							text: 'E-shop réalisé avec Wordpress & WooCommerce.',
 							link: 'https://e-shop.asiatex.fr/',
-							technos: ['Wordpress', 'WooCommerce']
+							expand: false
 						},
 						/*{
 							src: '',
@@ -367,21 +420,21 @@
 							title: 'ViZion',
 							text: 'Solution de gestion de personnage Roleplay pour le serveur Minecraft WetstonRP.',
 							link: 'https://vizion.wetstonrp.com/',
-							technos: ['PHP', 'MySQL']
+							expand: false
 						},
 						{
 							src: 'https://stan1712.com/share/LOGO-HOZIRON.png',
 							title: 'HoriZon',
 							text: 'Version 2 de ViZion en Vue.JS.',
 							link: 'https://horizon.wetstonrp.com/',
-							technos: ['Vue.JS', 'Firebase']
+							expand: false
 						},
 						{
 							src: 'https://instagram-recovery.com/assets/logo.aa642e9a.png',
 							title: 'Instagram Recovery',
 							text: 'Plateforme de récupération de données supprimées et cachées par Instagram.',
 							link: 'https://instagram-recovery.com',
-							technos: ['Firebase', 'Vue.JS', 'Vite']
+							expand: false
 						},
 						{
 							src: 'https://stan1712.com/share/slash.stan1712.com.prot.png',
@@ -389,21 +442,21 @@
 							text: 'Blog fait en PHP des plus belles punchlines.',
 							link: 'https://slash.stan1712.com/',
 							github: 'https://github.com/stan1712/StanIsSlash',
-							technos: ['PHP', 'MySQL']
+							expand: false
 						},
 						{
 							src: 'https://avatars.githubusercontent.com/u/75129344',
 							title: 'RollEat',
 							text: 'Application de livraison de repas aléatoires à domicile.',
 							github: 'https://github.com/RollEat/RollEat',
-							technos: ['Vue.JS', 'Firebase']
+							expand: false
 						},
 						{
 							src: 'https://www.eothello.com/images/favicon_othello.png',
 							title: 'Othello',
 							text: 'Reproduction du jeu Othello en python (projet EPSI).',
 							github: 'https://github.com/stan1712/EPSI-Othello',
-							technos: ['Python']
+							expand: false
 						},
 					],
 					stats: [
