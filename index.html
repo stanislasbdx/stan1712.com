@@ -203,7 +203,7 @@
 						<v-container>
 							<v-row>
 								<v-col v-for="(item, i) in items" :key="i" cols="12" md="4">
-									<v-card class="pt-2">
+									<v-card>
 										<v-img
 											:alt="'Illustration de ' + item.title"
 											:src="item.src"
@@ -292,6 +292,7 @@
 															<v-img
 																:alt="'Logo de ' + item.about.logo"
 																:src="item.about.logo"
+																class="mb-5"
 																width="70" 
 																contain
 															></v-img>
