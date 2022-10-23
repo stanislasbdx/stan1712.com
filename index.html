@@ -141,7 +141,7 @@
 											:alt="'Logo de ' + experience.name"
 											:src="experience.logo.url"
 											contain
-											:width="experience.logo.width ? experience.logo.width : '100%'"
+											:width="experience.logo.width ? experience.logo.width : '42px'"
 										>
 									</template>
 									<template
@@ -153,8 +153,8 @@
 									<v-card class="mx-2">
 										<v-card-title style="display: block">
 											<h1 class="headline">{{ experience.name }}</h1>
-											<h5 v-if="$vuetify.breakpoint.smAndDown">{{ experience.time }}</h5>
-											<h3 class="subtitle-1">{{ experience.type }}</h3>
+											<h3 v-if="$vuetify.breakpoint.smAndDown">{{ experience.time }}</h3>
+											<h2 class="subtitle-1">{{ experience.type }}</h2>
 										</v-card-title>
 										<v-card-text
 											v-if="experience.details"
@@ -373,7 +373,7 @@
 						details: `Conception et développement de composants d'interface utilisateur<br/>Conception et développement d'une application multicouche répartie en intégrant les recommandations de sécurité.`,
 						logo: {
 							url: 'https://deal.fr/wp-content/uploads/2022/09/cropped-android-chrome-512x512-1-32x32.png',
-							width: "60%"
+							width: "28px"
 						},
 						technos: ['Java', 'OSGI', 'Gradle', 'JWT.io', 'Liferay'],
 						time: "Sep. 2022 - Aujourd'hui"
@@ -410,7 +410,7 @@
 						type: 'Stage',
 						logo: {
 							url: 'https://deal.fr/wp-content/uploads/2022/09/cropped-android-chrome-512x512-1-32x32.png',
-							width: "60%"
+							width: "28px"
 						},
 						details: `Stage d'observation de troisième dans une entreprise de développement d'ERP.`,
 						technos: [],
