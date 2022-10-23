@@ -152,9 +152,9 @@
 									</template>
 									<v-card class="mx-2">
 										<v-card-title style="display: block">
-											<span class="headline">{{ experience.name }}</span>
+											<h1 class="headline">{{ experience.name }}</h1>
 											<h5 v-if="$vuetify.breakpoint.smAndDown">{{ experience.time }}</h5>
-											<span class="subtitle-1">{{ experience.type }}</span>
+											<h3 class="subtitle-1">{{ experience.type }}</h3>
 										</v-card-title>
 										<v-card-text
 											v-if="experience.details"
