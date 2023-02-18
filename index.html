@@ -141,17 +141,20 @@
 											:alt="'Logo de ' + experience.name"
 											:src="experience.logo.url"
 											contain
-											:width="experience.logo.width ? experience.logo.width : '100%'"
+											:width="experience.logo.width ? experience.logo.width : '42px'"
 										>
 									</template>
-									<template v-slot:opposite>
+									<template
+										v-slot:opposite
+										v-if="!$vuetify.breakpoint.smAndDown"
+									>
 										<span>{{ experience.time }}</span>
 									</template>
 									<v-card class="mx-2">
 										<v-card-title style="display: block">
-											<span class="headline">{{ experience.name }}</span>
-											<br/>
-											<span class="subtitle-1">{{ experience.type }}</span>
+											<h1 class="headline">{{ experience.name }}</h1>
+											<h3 v-if="$vuetify.breakpoint.smAndDown">{{ experience.time }}</h3>
+											<h2 class="subtitle-1">{{ experience.type }}</h2>
 										</v-card-title>
 										<v-card-text
 											v-if="experience.details"
@@ -192,7 +195,7 @@
 					<div class="py-12"></div>
 
 					<v-container>
-						<h2 class="display-2 font-weight-bold mb-3 text-center">Portoflio</h2>
+						<h2 class="display-2 font-weight-bold mb-3 text-center">Portfolio</h2>
 
 						<v-responsive class="mx-auto mb-12" width="56">
 							<v-divider class="mb-1"></v-divider>
@@ -339,6 +342,21 @@
 			position: absolute;
 			width: 100%;
 		}
+
+		/* SCROLLBAR */
+		::-webkit-scrollbar {
+			width: 7px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: rgba(0, 0, 0, 0.4);
+			border-radius: 3px;
+			border: 1px solid #fff;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
 	</style>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js"></script>
@@ -351,12 +369,13 @@
 				return {
 					experiences: [{
 						name: 'DEAL Informatique',
-						type: 'Alternant',
+						type: 'Alternance - Développeur Junior',
+						details: `Conception et développement de composants d'interface utilisateur<br/>Conception et développement d'une application multicouche répartie en intégrant les recommandations de sécurité.`,
 						logo: {
 							url: 'https://deal.fr/wp-content/uploads/2022/09/cropped-android-chrome-512x512-1-32x32.png',
-							width: "60%"
+							width: "28px"
 						},
-						technos: ['Java', 'OSGI', 'Gradle'],
+						technos: ['Java', 'OSGI', 'Gradle', 'JWT.io', 'Liferay', 'Karaf', 'XML/UBL'],
 						time: "Sep. 2022 - Aujourd'hui"
 					},
 					{
@@ -377,21 +396,21 @@
 						},
 						details: `Création d'un utilitaire sous forme d'application web qui permets de récupérer les messages et données supprimées mais gardées sur Instagram.`,
 						technos: ['Firebase', 'Vue.JS', 'Vite'],
-						time: "Été 2020"
+						time: "Mai-Juin 2020"
 					},
 					{
 						name: 'Météa',
 						type: 'Freelance',
 						details: `Installation et mise à niveau d'un système de gestion de fichiers et intranet en PHP avec une interface administrateur et utilisateur.`,
 						technos: ['PHP', 'MySQL'],
-						time: "Été 2020"
+						time: "Juin 2020"
 					},
 					{
 						name: 'DEAL Informatique',
 						type: 'Stage',
 						logo: {
 							url: 'https://deal.fr/wp-content/uploads/2022/09/cropped-android-chrome-512x512-1-32x32.png',
-							width: "60%"
+							width: "28px"
 						},
 						details: `Stage d'observation de troisième dans une entreprise de développement d'ERP.`,
 						technos: [],
