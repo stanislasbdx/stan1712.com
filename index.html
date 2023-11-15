@@ -537,10 +537,10 @@
 						},
 					],
 					stats: [
-						[0, 'Projets'],
-						[34, 'Technologies maitrisées'],
+						[-1, 'Projets'],
+						[-1, 'Technologies maitrisées'],
 						[7, 'Certifications'],
-						[0, 'Téléchargements'],
+						[-1, 'Téléchargements'],
 					],
 					landImg: [
 						"https://firebasestorage.googleapis.com/v0/b/katana-main/o/companies%2F36C84mB7deUm2RGEMLTP%2Fportfolio%2FIMG_20200928_131237_800x800.webp?alt=media&token=98158c57-bd5c-4500-947c-1b0179909b85",
@@ -548,7 +548,7 @@
 					]
 				}
 			},
-			mounted() {
+			created() {
 				fetch("https://api.spiget.org/v2/authors/114782/resources").then(response => response.json()).then(response => {
 					response.forEach((resource) => {
 						this.items.push({
@@ -557,14 +557,35 @@
 							text: resource.tag,
 							github: resource.sourceCodeLink,
 							link: `https://www.spigotmc.org/resources/${resource.name}.${resource.id}/`,
-							technos: ['Spigot MC', 'Java']
+							technos: ['Spigot', 'Java', 'Gradle']
 						});
 
 						this.stats[3][0] += Number(resource.downloads);
 					});
 				});
 
-				this.stats[0][0] = this.items.length + 8;
+				function calculateTechNum(items, experiences) {
+					var allTechnos = [];
+
+					items.forEach((item) => {
+						allTechnos = allTechnos.concat(item.technos);
+					});
+					experiences.forEach((item) => {
+						allTechnos = allTechnos.concat(experiences.technos);
+					});
+
+					console.log(allTechnos)
+
+					allTechnos = allTechnos.filter((value, index, array) => 
+						array.indexOf(value) === index
+					)
+
+					return allTechnos.length;
+				}
+
+				this.stats[1][0] = calculateTechNum(this.items, this.experiences);
+
+				this.stats[0][0] = this.items.length + this.experiences.length;
 			}
 		})
 	</script>
