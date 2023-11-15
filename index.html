@@ -117,14 +117,8 @@
 				</section>
 
 				<section id="timeline">
-					<v-container class="text-center">
+					<v-container class="text-left">
 						<h2 class="display-2 font-weight-bold mb-3">Mes expériences</h2>
-
-						<v-responsive class="mx-auto mb-8" width="56">
-							<v-divider class="mb-1"></v-divider>
-
-							<v-divider></v-divider>
-						</v-responsive>
 
 						<v-responsive class="mx-auto title font-weight-light mb-8" max-width="1280">
 							<v-timeline
@@ -148,14 +142,18 @@
 										v-slot:opposite
 										v-if="!$vuetify.breakpoint.smAndDown"
 									>
-										<span>{{ experience.time }}</span>
+										<h5 class="font-weight-regular">{{ experience.time }}</h5>
 									</template>
-									<v-card class="mx-2">
-										<v-card-title style="display: block">
+									<v-card>
+										<v-card-title
+											style="display: block"
+											class="pb-0"
+										>
 											<h1 class="headline">{{ experience.name }}</h1>
-											<h3 v-if="$vuetify.breakpoint.smAndDown">{{ experience.time }}</h3>
 											<h2 class="subtitle-1">{{ experience.type }}</h2>
+											<h6 v-if="$vuetify.breakpoint.smAndDown">{{ experience.time }}</h6>
 										</v-card-title>
+										<v-divider class="mx-12 mt-2"></v-divider>
 										<v-card-text
 											v-if="experience.details"
 											v-html="experience.details"
