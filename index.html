@@ -99,16 +99,16 @@
 							En études supérieures dans l'informatique depuis l'obtention de mon bac, je suis <b>en alternance depuis 2022 chez DEAL Infomatique</b>. Sur mon temps libre je travaille en tant que développeur freelance en appui avec Infographart, ce qui me permets d'apprendre et <b>d'avoir la capacité de m'adapter toutes topologies de projets.</b>
 						</v-responsive>
 
-						<v-btn aria-label="Accéder à Github" color="blue-grey darken-4" href="https://github.com/stan1712/" rel="noopener" target="_blank" outlined large icon>
+						<v-btn class="mx-3" aria-label="Accéder à Github" color="blue-grey darken-4" href="https://github.com/stan1712/" rel="noopener" target="_blank" outlined large icon>
 							<i class="fab fa-github" aria-hidden="true"></i>
 						</v-btn>
-						<v-btn aria-label="Accéder à Twitter" color="light-blue lighten-2" href="https://twitter.com/stanobdx/" rel="noopener" target="_blank" outlined large icon>
+						<v-btn class="mx-3" aria-label="Accéder à Twitter" color="light-blue lighten-2" href="https://twitter.com/stanobdx/" rel="noopener" target="_blank" outlined large icon>
 							<i class="fab fa-twitter" aria-hidden="true"></i>
 						</v-btn>
-						<v-btn aria-label="Accéder à Instagram" color="red lighten-3" href="https://www.instagram.com/stan_bdx/" rel="noopener" target="_blank" outlined large icon>
+						<v-btn class="mx-3" aria-label="Accéder à Instagram" color="red lighten-3" href="https://www.instagram.com/stan_bdx/" rel="noopener" target="_blank" outlined large icon>
 							<i class="fab fa-instagram" aria-hidden="true"></i>
 						</v-btn>
-						<v-btn aria-label="Accéder à Instagram" color="blue darken-4" href="https://www.linkedin.com/in/stanislas-castaybert/" rel="noopener" target="_blank" outlined large icon>
+						<v-btn class="mx-3" aria-label="Accéder à Instagram" color="blue darken-4" href="https://www.linkedin.com/in/stanislas-castaybert/" rel="noopener" target="_blank" outlined large icon>
 							<i class="fab fa-linkedin" aria-hidden="true"></i>
 						</v-btn>
 					</v-container>
@@ -117,8 +117,14 @@
 				</section>
 
 				<section id="timeline">
-					<v-container class="text-left">
-						<h2 class="display-2 font-weight-bold mb-3">Mes expériences</h2>
+					<v-container>
+						<h2 class="display-2 font-weight-bold mb-3 text-center">Mes expériences</h2>
+
+						<v-responsive class="mx-auto mb-8" width="56">
+							<v-divider class="mb-1"></v-divider>
+
+							<v-divider></v-divider>
+						</v-responsive>
 
 						<v-responsive class="mx-auto title font-weight-light mb-8" max-width="1280">
 							<v-timeline
@@ -153,7 +159,7 @@
 											<h2 class="subtitle-1">{{ experience.type }}</h2>
 											<h6 v-if="$vuetify.breakpoint.smAndDown">{{ experience.time }}</h6>
 										</v-card-title>
-										<v-divider class="mx-12 mt-2"></v-divider>
+										<v-divider class="ml-4 mr-12 mt-2"></v-divider>
 										<v-card-text
 											v-if="experience.details"
 											v-html="experience.details"
