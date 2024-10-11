@@ -58,7 +58,6 @@
 											<span :class="[$vuetify.breakpoint.smAndDown ? 'display-3': 'display-4']" class="font-weight-black">
 												Castaybert Stanislas
 											</span>
-
 										</v-col>
 
 										<v-btn aria-label="Poursuivre la visite du site" class="align-self-end" fab outlined @click="$vuetify.goTo('#about-me')">
@@ -71,7 +70,7 @@
 					</v-row>
 				</section>
 
-				<section id="about-me">
+				<section id="about-me" style="height: 100vh;">
 					<div class="py-12"></div>
 
 					<v-container class="text-center">
@@ -113,7 +112,19 @@
 						</v-btn>
 					</v-container>
 
-					<div class="py-4"></div>
+					<div class="py-4 text-center">
+						<v-btn
+							aria-label="Poursuivre la visite du site"
+							class="mt-9 mb-2"
+							fab
+							outlined
+							color="grey"
+							small
+							@click="$vuetify.goTo('#timeline')"
+						>
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</v-btn>
+					</div>
 				</section>
 
 				<section id="timeline">
