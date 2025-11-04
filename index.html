@@ -70,7 +70,7 @@
 					</v-row>
 				</section>
 
-				<section id="about-me" style="height: 100vh;">
+				<section id="about-me" style="min-height: 100vh;">
 					<div class="py-12"></div>
 
 					<v-container class="text-center">
@@ -93,43 +93,60 @@
 							></v-img>
 						</v-avatar>
 
+						<v-responsive class="mx-auto mb-8">
+							<v-btn class="mx-3" aria-label="Accéder à Github" color="blue-grey darken-4" href="https://github.com/stan1712/" rel="noopener" target="_blank" outlined large icon>
+								<i class="fab fa-github" aria-hidden="true"></i>
+							</v-btn>
+							<v-btn class="mx-3" aria-label="Accéder à Twitter" color="light-blue lighten-2" href="https://twitter.com/stanobdx/" rel="noopener" target="_blank" outlined large icon>
+								<i class="fab fa-twitter" aria-hidden="true"></i>
+							</v-btn>
+							<v-btn class="mx-3" aria-label="Accéder à Instagram" color="red lighten-3" href="https://www.instagram.com/stan_bdx/" rel="noopener" target="_blank" outlined large icon>
+								<i class="fab fa-instagram" aria-hidden="true"></i>
+							</v-btn>
+							<v-btn class="mx-3" aria-label="Accéder à Instagram" color="blue darken-4" href="https://www.linkedin.com/in/stanislas-castaybert/" rel="noopener" target="_blank" outlined large icon>
+								<i class="fab fa-linkedin" aria-hidden="true"></i>
+							</v-btn>
+						</v-responsive>
+
 						<v-responsive class="mx-auto title font-weight-light mb-8" max-width="720">
 							Enchanté, moi c'est Stanislas ! Je passionné par le développement, je suis à l'aise avec les <b>technologies back-end et front-end</b>. Ma polyvalence s'étend également à des <b>connaissances solides en DevOps et en web design</b>, me permettant de concevoir des solutions complètes.<br /><br />
 							<b>Ingénieur (Bac+5) fraîchement diplômé</b>, j'ai terminé mon alternance de 3 ans chez DEAL Informatique et je suis maintenant <b>à l'écoute d'opportunités (CDI ou missions)</b>. Je continue en parallèle mon activité de freelance chez Infographart, ce qui m'a donné une <b>grande polyvalence</b> et une <b>forte capacité d'adaptation</b> à tout type de projet.<br /> <br />
+
+							<v-row class="my-4">
+								<v-col cols="12" sm="6">
+									<v-btn 
+										block
+										outlined
+										color="primary"
+										append-icon="fas fa-arrow-up-right-from-square"
+										@click="tpTo('./CV.pdf')"
+									>
+										CV Complet
+										<i class="fas fa-external-link-alt pl-2" aria-hidden="true"></i>
+									</v-btn>
+									<span class="text-muted font-italic text-caption">Vous retrouverez toutes mes expériences, formations et autres détails à mon propos.</span>
+								</v-col>
+								<v-col cols="12" sm="6">
+									<v-btn 
+										block
+										outlined
+										color="primary"
+										append-icon="fa fa-link"
+										@click="tpTo('./DC.pdf')"
+									>
+										Dossier de compétences
+										<i class="fas fa-external-link-alt pl-2" aria-hidden="true"></i>
+									</v-btn>
+									<span class="text-muted font-italic text-caption">Vous retrouverez toutes mes expériences et projets de manière détaillée et exhaustive.</span>
+								</v-col>
+							</v-row>
 						</v-responsive>
-
-						<v-btn class="mx-3" aria-label="Accéder à Github" color="blue-grey darken-4" href="https://github.com/stan1712/" rel="noopener" target="_blank" outlined large icon>
-							<i class="fab fa-github" aria-hidden="true"></i>
-						</v-btn>
-						<v-btn class="mx-3" aria-label="Accéder à Twitter" color="light-blue lighten-2" href="https://twitter.com/stanobdx/" rel="noopener" target="_blank" outlined large icon>
-							<i class="fab fa-twitter" aria-hidden="true"></i>
-						</v-btn>
-						<v-btn class="mx-3" aria-label="Accéder à Instagram" color="red lighten-3" href="https://www.instagram.com/stan_bdx/" rel="noopener" target="_blank" outlined large icon>
-							<i class="fab fa-instagram" aria-hidden="true"></i>
-						</v-btn>
-						<v-btn class="mx-3" aria-label="Accéder à Instagram" color="blue darken-4" href="https://www.linkedin.com/in/stanislas-castaybert/" rel="noopener" target="_blank" outlined large icon>
-							<i class="fab fa-linkedin" aria-hidden="true"></i>
-						</v-btn>
 					</v-container>
-
-					<div class="py-4 text-center">
-						<v-btn
-							aria-label="Poursuivre la visite du site"
-							class="mt-9 mb-2"
-							fab
-							outlined
-							color="grey"
-							small
-							@click="$vuetify.goTo('#timeline')"
-						>
-							<i class="fa fa-chevron-down" aria-hidden="true"></i>
-						</v-btn>
-					</div>
 				</section>
 
 				<section id="timeline">
 					<v-container>
-						<h2 class="display-2 font-weight-bold mb-3 text-center">Mes expériences</h2>
+						<h2 class="display-2 font-weight-bold mb-3 text-center">Expériences</h2>
 
 						<v-responsive class="mx-auto mb-8" width="56">
 							<v-divider class="mb-1"></v-divider>
@@ -619,6 +636,11 @@
 						"./assets/bridge_background.webp"
 					]
 				}
+			},
+			methods: {
+				tpTo(url) {
+					window.location = url;
+				},
 			},
 			created() {
 				fetch("https://api.spiget.org/v2/authors/114782/resources").then(response => response.json()).then(response => {
