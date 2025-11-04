@@ -416,7 +416,13 @@
 							url: 'https://deal.fr/wp-content/uploads/2022/09/cropped-android-chrome-512x512-1-32x32.png',
 							width: "28px"
 						},
-						technos: ['Java', 'OSGI', 'Gradle', 'JWT.io', 'Liferay', 'Karaf', 'XML/UBL', 'Nexus', 'Gitlab CI/CD', 'Nest.JS', 'OIDC', 'Keycloak', 'Powershell Scripts', 'Angular', 'WebComponents', 'Repositories NX'],
+						technos: [
+							'Java (Karaf, OSGi, Liferay)', 'Angular (Nx)', 'NestJS', 'Apache Camel', 'HTML/SCSS',
+							'GitLab CI/CD', 'Dokploy', 'Nexus', 'Centreon', 'Docker', 'Linux (serveurs)', 'Jira', 'Confluence', 'SonarQube', 'Snyk', 'Gradle', 'Keycloak', 'Figma',
+							'Unifi (Ubiquiti)', 'Configuration de serveurs',
+							'Tests unitaires (JUnit)', 'Rédaction de cahiers de tests', 'Tests de charge', 'Tests de régression', 'Analyse de logs',
+							'Agile (SCRUM)', 'ISO 27001', 'Conception technique', 'Support applicatif (N1/N2)', 'Support IT interne (N1/N2)', 'Relation client', 'Communication (partenaire externe)', 'Formation', 'Mentorat', 'Autonomie'
+						],
 						time: "Sept. 2022 - Sept. 2025"
 					},
 					{
@@ -439,7 +445,11 @@
 							➡️ Gestion des noms de domaines, réseaux et routages de nos applications et sites clients<br/>
 							➡️ Maintenance et réponse de support sur nos solutions<br/>
 						`,
-						technos: ['Vue.JS', 'Vercel', 'PHP', 'MySQL', 'Firebase', 'OpenAI', 'Nuxt.JS', 'Vite', 'Vuetify', 'Bitbucket CI/CD', 'Gitlab CI/CD'],
+						technos: [
+                            'Vue.js 2 & 3', 'Vuetify', 'Node.js', 'Nest.js', 'PHP', 'JavaScript/TypeScript', 'Firebase', 'Google Cloud Functions (GCP)', 'MySQL', 'PostgreSQL', 'Stripe API', 'WordPress/WooCommerce', 'API OpenAI & Gemini',
+                            'GitLab CI/CD', 'Github Actions', 'Docker', 'Kubernetes (K8s)', 'GCP', 'Vercel', 'Cloudflare', 'Helm', 'Grafana', 'SonarQube', 'Sentry', 'Snyk', 'UptimeKuma', 'JIRA', 'Bitbucket', 'ESlint', 'Prettier',
+                            'Prise de décision', 'Pilotage de refonte', 'Architecture logicielle', 'Gestion de projet', 'FinOps', 'Benchmark technique', 'Relation client', 'Formation', 'Coordination d\'équipe', 'Autonomie', 'Support & Maintenance', 'Définition de standards'
+                        ],
 						time: "Mai 2018 - Aujourd'hui"
 					},
 					{
@@ -659,23 +669,11 @@
 				});
 
 				function calculateTechNum(items, experiences) {
-					var allTechnos = [];
+                    const allTechnos = [...items, ...experiences].flatMap(item => item.technos || []);
+                    return new Set(allTechnos).size;
+                }
 
-					items.forEach((item) => {
-						allTechnos = allTechnos.concat(item.technos);
-					});
-					experiences.forEach((item) => {
-						allTechnos = allTechnos.concat(experiences.technos);
-					});
-
-					allTechnos = allTechnos.filter((value, index, array) => 
-						array.indexOf(value) === index
-					)
-
-					return allTechnos.length;
-				}
-
-				this.stats[1][0] = calculateTechNum(this.items, this.experiences);
+                this.stats[1][0] = calculateTechNum(this.items, this.experiences);
 
 				this.stats[0][0] = this.items.length + this.experiences.length;
 			}
